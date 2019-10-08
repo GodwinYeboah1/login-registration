@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login & Reg | Home</title>
+    <style>
+    
+    .container {
+        width: 300px;
+        margin: 120px auto;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h3>Registration</h3>
+        <form action="/users/new" method="post">
+            {% csrf_token%}      
+            <label for="">First Name <br>
+                <input type="text" name="first_name" id="">
+            </label><br>
+            <label for="">last Name <br>
+                <input type="text" name="last_name" id="">
+            </label><br>
+            <label for="">Email <br>
+                <input type="email" name="email" id="">
+            </label><br>
+            <label for="">Password <br>
+                <input type="password" name="password" id="">
+            </label><br>
+            <label for="">Confirmation Password <br>
+                <input type="password" name="pw_confirmation" id="">
+            </label><br>
+            <input type="submit" value="Register">
+        </form>
+
+        <h3>Login</h3>
+        <form action="/logins/check" method="post"> 
+            {% csrf_token%} 
+            <label for="">Email <br>
+                <input type="email" name="email" id="">
+            </label><br>
+            <label for="">Password <br>
+                <input type="password" name="pw" id="">
+            </label><br>      
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+</body>
+</html>
